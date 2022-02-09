@@ -18,10 +18,13 @@ async function github(username, callback) {
 }
 
 function main() {
-    github('abbi36', (error, projects) => {
+    github('ab3636', (error, projects) => {
+        if (error != undefined)
+        console.log(error.message);
+        return;
         for (let project of projects){
             console.log(`${project.name} has ${project.stargazers_count} and it is ${project.description}`);
-        }
+        } 
     });
 }
 
